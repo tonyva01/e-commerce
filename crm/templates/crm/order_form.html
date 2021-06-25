@@ -1,0 +1,17 @@
+
+{%  extends 'crm/base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% for form in formset %}
+        {{formset.management_form}}
+        {{form}}
+        <hr>
+    {% endfor %}
+    <input type="submit" name="Submit">
+</form>
+
+
+{% endblock %}

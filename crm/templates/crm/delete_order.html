@@ -1,0 +1,13 @@
+
+{%  extends 'crm/base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<form action="{% url 'delete_order' order.id %}" method="POST">
+    {% csrf_token %}
+    <p> Are you sure you want to delete order: {{order}} ? </p>
+    <a class="btn btn-sm btn-info" href="{% url 'dashboard' %}">Cancel</a>
+    <input type="submit" class="btn btn-sm btn-danger" name="Confirm">
+</form>
+
+{% endblock %}
